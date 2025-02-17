@@ -56,7 +56,7 @@ import { Application, Assets, BlurFilter, Container, Graphics, Sprite, Texture }
     const REEL_WIDTH = 149;
     const SYMBOL_SIZE = 150;
 
-    const reels = [];
+    const reels: any[] = [];
     const reelContainer = new Container();
 
 
@@ -69,7 +69,7 @@ import { Application, Assets, BlurFilter, Container, Graphics, Sprite, Texture }
 
         const reel = {
             container: rc,
-            symbols: [],
+            symbols: [] as Sprite[],
             position: 0,
             previousPosition: 0,
             blur: new BlurFilter(),
@@ -170,9 +170,9 @@ import { Application, Assets, BlurFilter, Container, Graphics, Sprite, Texture }
         }
     });
 
-    const tweening = [];
+    const tweening: any[] = [];
 
-    function tweenTo(object, property, target, time, easing, onchange, oncomplete)
+    function tweenTo(object: { [ x: string ]: any; }, property: string, target: any, time: number, easing: (t: any) => number, onchange: null, oncomplete: (() => void) | null)
     {
         const tween = {
             object,
@@ -220,13 +220,13 @@ import { Application, Assets, BlurFilter, Container, Graphics, Sprite, Texture }
         }
     });
 
-    function lerp(a1, a2, t)
+    function lerp(a1: number, a2: number, t: number)
     {
         return a1 * (1 - t) + a2 * t;
     }
 
-    function backout(amount)
+    function backout(amount: number)
     {
-        return (t) => --t * t * ((amount + 1) * t + amount) + 1;
+        return (t: number) => --t * t * ((amount + 1) * t + amount) + 1;
     }
 })();
