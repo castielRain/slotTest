@@ -22,10 +22,9 @@ jobs:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
 
-    - uses: actions/setup-node@v4
+      uses: actions/setup-node@v4
       with:
-         node-version: "14.17.3"
-         architecture: 'x64'
+        node-version: 20
     - name: Clear npm cache
       run: npm cache clean --force
 
