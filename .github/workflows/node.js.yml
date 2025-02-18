@@ -26,7 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: install npm
+    - name: Install type definitions
+      run: npm install --save-dev @types/css-font-loading-module
+    - name: Install dependencies
       run: npm ci
-    - name: run npm
-      run: npm run build
+    - name: Install type definitions
+      run: npm install --save-dev
