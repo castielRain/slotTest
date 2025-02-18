@@ -26,7 +26,6 @@ jobs:
       with:
          node-version: "14.17.3"
          architecture: 'x64'
-         cache: 'npm'
     - name: Clear npm cache
       run: npm cache clean --force
 
